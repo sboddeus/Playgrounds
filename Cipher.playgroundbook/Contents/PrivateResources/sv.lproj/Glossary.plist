@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Terms</key>
+	<dict>
+		<key>argument</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/04.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Lösa koden</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Ett inmatningsvärde som överförs till en funktion för att anpassa dess beteende. I exempelvis funktionsanropet `move(distance: 3)` är `3` ett argument som anger hur många steg som ska flyttas.
+            </string>
+				<key>Title</key>
+				<string>argument</string>
+			</dict>
+		</dict>
+		<key>attack</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/04.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Lösa koden</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>En metod som används till att knäcka ett krypteringsschema.</string>
+				<key>Title</key>
+				<string>attack</string>
+			</dict>
+		</dict>
+		<key>brute force</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/04.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Lösa koden</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Ett avkrypteringssystem som använder varenda möjligt alternativ för att knäcka ett krypteringsschema.</string>
+				<key>Title</key>
+				<string>brute force</string>
+			</dict>
+		</dict>
+		<key>call</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string></string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string></string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Att tala om för en kod att köra en funktion. Exempelvis är ett anrop till funktionen `moveForward()` i koden ett sätt att säga åt programmet att utföra åtgärderna som definieras i den funktionen.</string>
+				<key>Title</key>
+				<string>anrop</string>
+			</dict>
+		</dict>
+		<key>cipher</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/04.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Lösa koden</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Ett sätt att omvandla ett meddelande för att gömma dess innebörd.</string>
+				<key>Title</key>
+				<string>chiffer</string>
+			</dict>
+		</dict>
+		<key>ciphertext</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/03.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Skiftövning</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Ett meddelande eller klartext som har krypterats.</string>
+				<key>Title</key>
+				<string>chiffertext</string>
+			</dict>
+		</dict>
+		<key>cryptography</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/01.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Ut ur stormen</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Konsten att kryptera eller avkryptera meddelanden som har skrivits med hemlig kod.</string>
+				<key>Title</key>
+				<string>kryptografi</string>
+			</dict>
+		</dict>
+		<key>decryption</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/03.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Skiftövning</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Processen att konvertera en chiffertext till dess ursprungliga klartext eller meddelande.</string>
+				<key>Title</key>
+				<string>avkryptering</string>
+			</dict>
+		</dict>
+		<key>encryption</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/03.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Skiftövning</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Processen att gömma ett meddelande eller klartext så att det inte längre är läsbart.</string>
+				<key>Title</key>
+				<string>kryptering</string>
+			</dict>
+		</dict>
+		<key>shift</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/02.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Upptäckten</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Antalet bokstäver du måste flytta framåt eller bakåt genom alfabetet för att komma fram till den krypterade eller avkrypterade texten.</string>
+				<key>Title</key>
+				<string>skift</string>
+			</dict>
+		</dict>
+		<key>steganography</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/02.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Upptäckten</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Konsten att gömma hemliga texter eller bilder i ohemliga texter eller bilder.</string>
+				<key>Title</key>
+				<string>steganografi</string>
+			</dict>
+		</dict>
+		<key>substitution cipher</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/02.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Upptäckten</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Ett chiffer som krypteras genom att byta ut varje ursprunglig bokstav mot en annan bokstav.</string>
+				<key>Title</key>
+				<string>ersättningschiffer</string>
+			</dict>
+		</dict>
+		<key>transposition cipher</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/02.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Upptäckten</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Ett chiffer som krypteras genom att blanda eller flytta alla bokstäver i det ursprungliga meddelandet utan att ändra dem.</string>
+				<key>Title</key>
+				<string>transponerings­chiffer</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

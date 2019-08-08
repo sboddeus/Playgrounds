@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import UIKit
+import PlaygroundSupport
+import NaturalLanguage
+import CwlViews
+
+// NOTE: after loading for the first time, this playground will take 45-60 seconds before it can run
+
+struct TextFieldViewState: CodableContainer {
+    let text: Var&lt;String&gt;
+    init() {
+        text = Var("")
+    }
+}
+
+struct ProgressViewState: CodableContainer {
+    var progress: TempVar&lt;Float&gt;
+    init() {
+        progress = TempVar&lt;Float&gt;()
+    }
+}
+
+struct SliderViewState: CodableContainer {
+    static let min = 0 as Float
+    static let max = 500 as Float
+    static let initial = 100 as Float
+    
+    let value: Var&lt;Float&gt;
+    init() {
+        value = Var(SliderViewState.initial)
+    }
+}
+
+@available(iOSApplicationExtension 12.0, *)
+func textFieldView(_ textFieldViewState: TextFieldViewState, _ sliderViewState: SliderViewState, _ progressViewState: ProgressViewState) -&gt; ViewControllerConvertible {
+    return ViewController(
+        .view -- View(
+            .backgroundColor -- .white,
+            .layout -- .center(
+                alignment: .center,
+                marginEdges: .allLayout,
+                breadth: .equalTo(ratio: 1.0),
+                .view(
+                    Label(
+                        .font -- UIFont.preferredFont(forTextStyle: .callout, weight: .semibold),
+                        .text &lt;-- textFieldViewState.text.allChanges().keyPath(\.statistics)
+                    )
+                ),
+                .space(),
+                .view(
+                    breadth: .equalTo(ratio: 1.0),
+                    TextField(
+                        .text &lt;-- textFieldViewState.text,
+                        .textChanged() --&gt; textFieldViewState.text.update(),
+                        .borderStyle -- .roundedRect
+                    )
+                ),
+                .space(),
+                .view(
+                    Label(
+                        .text &lt;-- sliderViewState.value.allChanges().map { "\($0)" }
+                    )
+                ),
+                .space(),
+                .view(
+                    Slider(
+                        .isContinuous -- true,
+                        .minimumValue -- SliderViewState.min,
+                        .maximumValue -- SliderViewState.max,
+                        .value &lt;-- sliderViewState.value.animate(),
+                        .action(.valueChanged, \.value) --&gt; sliderViewState.value.update()
+                    )
+                ),
+                .space(),
+                .view(
+                    Label(
+                        //.text &lt;-- progressViewState.progress.map(String.label),
+                        //.font -- UIFont.monospacedDigitSystemFont(ofSize: 17, weight: .regular)
+                    )
+                ),
+                .space(),
+                .view(
+                    length: 20,
+                    ProgressView(
+                        .trackTintColor -- .green,
+                        //.progressImage -- .drawn(width: 300, height: 20) { $0.fillEllipse(in: $1) },
+                        .progress &lt;-- progressViewState.progress.animate(.never)
+                    )
+                )
+            )
+        ),
+        .lifetimes -- [
+            Signal
+                .interval(DispatchTimeInterval.interval(1 / 60))
+                .map { Float($0 % 300) / Float(300) }
+                .cancellableBind(to: progressViewState.progress)
+        ]
+    )
+}
+
+@available(iOSApplicationExtension 12.0, *)
+private extension String {
+    var statistics: String {
+        let labelFormat = NSLocalizedString("Field contains %ld characters and %ld words.", comment: "")
+        let tokenizer = NLTokenizer(unit: .word)
+        tokenizer.string = self
+        let wordCount = tokenizer.tokens(for: startIndex..&lt;endIndex).count
+        return .localizedStringWithFormat(labelFormat, count, wordCount)
+    }
+}
+
+if #available(iOSApplicationExtension 12.0, *) {
+    PlaygroundPage.current.liveView = textFieldView(TextFieldViewState(), SliderViewState(), ProgressViewState()).uiViewController()
+} else {
+    // Fallback on earlier versions
+}
+
+private extension Int {
+    static let fiveSecondsAtSixtyPerSecond = 60 * 5
+}
+
+private extension DispatchTimeInterval {
+    static let sixtyTimesPerSecond = DispatchTimeInterval.interval(1 / 60)
+}
+
+private extension String {
+    static func label(_ progress: Float) -&gt; String {
+        return String.localizedStringWithFormat(NSLocalizedString("Progress: %0.3f", comment: ""), progress)
+    }
+}
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 4455}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>

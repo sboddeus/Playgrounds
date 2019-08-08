@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Terms</key>
+	<dict>
+		<key>argument</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/04.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Déchiffrer le code</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Valeur d’entrée transmise à une fonction pour personnaliser son comportement. Par exemple, dans l’appel à la fonction `move(distance: 3)`, `3` est un argument qui indique de combien d’espaces se déplacer.
+            </string>
+				<key>Title</key>
+				<string>argument</string>
+			</dict>
+		</dict>
+		<key>attack</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/04.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Déchiffrer le code</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Méthode utilisée pour venir à bout d’un modèle de chiffrement.</string>
+				<key>Title</key>
+				<string>attaque</string>
+			</dict>
+		</dict>
+		<key>brute force</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/04.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Déchiffrer le code</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Système de déchiffrement qui fait appel à toutes les possibilités pour venir à bout d’un modèle de chiffrement.</string>
+				<key>Title</key>
+				<string>force brute</string>
+			</dict>
+		</dict>
+		<key>call</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string></string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string></string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Permet d’indiquer au code d’exécuter une fonction. Par exemple, en appelant la fonction `moveForward()` dans ton code, tu indiques à l’application d’effectuer l’opération définie dans cette fonction.</string>
+				<key>Title</key>
+				<string>appeler</string>
+			</dict>
+		</dict>
+		<key>cipher</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/04.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Déchiffrer le code</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Un moyen de transformer un message de façon à le rendre incompréhensible.</string>
+				<key>Title</key>
+				<string>message codé</string>
+			</dict>
+		</dict>
+		<key>ciphertext</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/03.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Entraînement aux décalages</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Message ou texte en clair qui a été chiffré.</string>
+				<key>Title</key>
+				<string>texte chiffré</string>
+			</dict>
+		</dict>
+		<key>cryptography</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/01.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Enfin à l’abri !</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Pratique consistant à chiffrer et déchiffrer des messages rédigés à l’aide d’un code secret.</string>
+				<key>Title</key>
+				<string>cryptographie</string>
+			</dict>
+		</dict>
+		<key>decryption</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/03.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Entraînement aux décalages</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Processus permettant de convertir un texte chiffré de façon à obtenir le texte en clair ou le message original.</string>
+				<key>Title</key>
+				<string>déchiffrement</string>
+			</dict>
+		</dict>
+		<key>encryption</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/03.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Entraînement aux décalages</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Processus permettant de cacher un message ou du texte en clair de façon à ce qu’il ne soit plus clairement lisible.</string>
+				<key>Title</key>
+				<string>chiffrement</string>
+			</dict>
+		</dict>
+		<key>shift</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/02.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>La découverte</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Nombre de lettres de l’alphabet que tu dois parcourir vers l’avant ou vers l’arrière pour obtenir le texte chiffré ou déchiffré.</string>
+				<key>Title</key>
+				<string>décalage</string>
+			</dict>
+		</dict>
+		<key>steganography</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/02.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>La découverte</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Pratique consistant à cacher des images ou du texte secrets au sein d’images ou de texte qui ne sont pas secrets.</string>
+				<key>Title</key>
+				<string>stéganographie</string>
+			</dict>
+		</dict>
+		<key>substitution cipher</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/02.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>La découverte</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Chiffrement effectué en remplaçant chaque lettre originale par une autre lettre.</string>
+				<key>Title</key>
+				<string>chiffrement par substitution</string>
+			</dict>
+		</dict>
+		<key>transposition cipher</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/02.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>La découverte</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Chiffrement effectué en mélangeant ou en déplaçant toutes les lettres du message original sans les modifier.</string>
+				<key>Title</key>
+				<string>chiffrement par transposition</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

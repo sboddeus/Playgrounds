@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Terms</key>
+	<dict>
+		<key>cycloid</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/01.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Genel Bilgi</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Düz bir çizgi boyunca yuvarlanan bir çemberdeki noktanın takip ettiği eğri.</string>
+				<key>Title</key>
+				<string>sikloit</string>
+			</dict>
+		</dict>
+		<key>etymology</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/03.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Episikloitler</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Sözcük kökenlerinin incelenmesi.</string>
+				<key>Title</key>
+				<string>etimoloji</string>
+			</dict>
+		</dict>
+		<key>subset</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/04.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Hipotrokoitler</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Küme adı verilen bir grup öğe. Bu öğelerin tümü daha büyük bir kümenin parçasıdır.</string>
+				<key>Title</key>
+				<string>alt küme</string>
+			</dict>
+		</dict>
+		<key>trochoid</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/04.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Hipotrokoitler</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Düz veya eğri olabilecek başka bir yüzey boyunca yuvarlanan bir çemberdeki noktanın takip ettiği eğri.</string>
+				<key>Title</key>
+				<string>trokoit</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

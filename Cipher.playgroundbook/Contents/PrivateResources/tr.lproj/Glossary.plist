@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Terms</key>
+	<dict>
+		<key>argument</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/04.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Şifre Kırma</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Davranışını özelleştirmek için fonksiyona geçirilen bir girdi değeri. Örneğin `move(distance: 3)` fonksiyon çağrısında `3`, kaç aralık ileri gidileceğini belirten bir argümandır.
+            </string>
+				<key>Title</key>
+				<string>argüman</string>
+			</dict>
+		</dict>
+		<key>attack</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/04.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Şifre Kırma</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Bir şifreleme düzenini kırmak için kullanılan bir yöntem.</string>
+				<key>Title</key>
+				<string>saldırı</string>
+			</dict>
+		</dict>
+		<key>brute force</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/04.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Şifre Kırma</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Bir şifreleme düzenini kırmak için mümkün olan her seçeneği kullanan bir şifre çözme sistemi.</string>
+				<key>Title</key>
+				<string>kaba kuvvet</string>
+			</dict>
+		</dict>
+		<key>call</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string></string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string></string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Koda bir fonksiyonu çalıştırmasını söylemek. Örneğin kodundaki `moveForward()` fonksiyonunun çağrılması, uygulamaya o fonksiyonda tanımlanan eylemleri gerçekleştirmesini söyler.</string>
+				<key>Title</key>
+				<string>çağırma</string>
+			</dict>
+		</dict>
+		<key>cipher</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/04.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Şifre Kırma</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Bir mesajın anlamını gizlemek için onu dönüştürme biçimi.</string>
+				<key>Title</key>
+				<string>şifre</string>
+			</dict>
+		</dict>
+		<key>ciphertext</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/03.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Kaydırma Alıştırması</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Şifrelenmiş bir mesaj veya düz metin.</string>
+				<key>Title</key>
+				<string>şifreli metin (ciphertext)</string>
+			</dict>
+		</dict>
+		<key>cryptography</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/01.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Fırtına</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Mesajları şifreleme ve gizli kodla yazılmış mesajların şifresini çözme işlemi.</string>
+				<key>Title</key>
+				<string>kriptografi</string>
+			</dict>
+		</dict>
+		<key>decryption</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/03.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Kaydırma Alıştırması</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Şifreli metni özgün düz metne veya mesaja dönüştürme işlemi.</string>
+				<key>Title</key>
+				<string>şifre çözme</string>
+			</dict>
+		</dict>
+		<key>encryption</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/03.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Kaydırma Alıştırması</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Bir mesajın veya düz metnin kolayca okunamaması için içeriğini gizleme işleme.</string>
+				<key>Title</key>
+				<string>şifreleme</string>
+			</dict>
+		</dict>
+		<key>shift</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/02.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Keşif</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Şifrelenmiş veya şifresi çözülmüş metne ulaşmak için alfabede ileri veya geri kaç harf gitmen gerektiği.</string>
+				<key>Title</key>
+				<string>kaydırma</string>
+			</dict>
+		</dict>
+		<key>steganography</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/02.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Keşif</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Gizli metinleri veya görüntüleri, gizli olmayan metin veya görüntülerin içine gizleme işlemi.</string>
+				<key>Title</key>
+				<string>steganografi</string>
+			</dict>
+		</dict>
+		<key>substitution cipher</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/02.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Keşif</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Özgün her bir harfin yerine farklı bir harf koyarak oluşturulan bir şifre.</string>
+				<key>Title</key>
+				<string>yerine koyma şifrelemesi</string>
+			</dict>
+		</dict>
+		<key>transposition cipher</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Document1.playgroundchapter/02.playgroundpage</string>
+				<key>_LOCALIZABLE_</key>
+				<dict>
+					<key>Title</key>
+					<string>Keşif</string>
+				</dict>
+			</dict>
+			<key>_LOCALIZABLE_</key>
+			<dict>
+				<key>Definition</key>
+				<string>Özgün mesajın harflerini değiştirmeden tümünü karıştırarak veya yerini değiştirerek oluşturulan bir şifre.</string>
+				<key>Title</key>
+				<string>yer değiştirme şifrelemesi</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

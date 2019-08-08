@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trail name="0103">
+    <steps>
+        <step type="context">
+            <blocks>
+                <block type="title"><title id="4Uq-7v-AVX">Calling Functions</title></block>
+                <block type="text"><text id="iWa-Dq-jP7">Now that you’ve written a few of your own functions in a shared file, learn how to call pre-built functions from other shared files to create a robust musical scene.</text></block>
+                <block type="image" source="lotsOfGraphic" height="0.75">
+                    <description id="QcY-pf-48A">An image of all the kinds of graphic you can add, including gems, an oyster, crystals, and mushrooms.</description>
+                </block>
+            </blocks>
+        </step>
+        <step type="experiment">
+            <blocks>
+                <block type="title"><title id="iaS-C7-DTr">Cave Glitter</title></block>
+                <block type="text"><text id="2mn-gD-t6p"><task/>Explore the <cv>addCaveGlitter</cv> function in the <b>CaveGlitter</b> file.</text></block>
+                <block type="image" source="caveGlitter" height="0.4">
+                    <description id="SLI-KY-WBa">Picture of lots of pentagon shapes of different sizes with a gradient color randomly placed in a cluster.</description>
+                </block>
+                <block type="text"><text id="3hV-zM-iLG"><task/>Looking at the <a href="glossary://function%20definition">function definition</a>, try calling the <cv>addCaveGlitter</cv> function in the <b>main</b> <icon name="main"/> file.</text></block>
+                <groupblock disclosed="false">
+                    <block type="title"><title id="qui-9d-TTT">Need Help?</title></block>
+                    <block type="code">addCaveGlitter(count: <num>50</num>, color: <literal>#colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)</literal>, gradientColor: <literal>#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)</literal>, at: Point(x: <num>160</num>, y: <num>140</num>))</block>
+                </groupblock>
+                <block type="text"><text id="N6m-DY-LYr"><task/><b>Run your code</b> and move your finger around the cave glitter to hear what kinds of sounds they make.</text></block>
+                <block type="text"><text id="222-gD-t6p"><task/>Try changing the shape of the cave glitter in the <b>CaveGlitter</b> file.</text></block>
+            </blocks>
+        </step>
+        <step type="experiment">
+            <blocks>
+                <block type="title"><title id="DzA-pI-HWd">Graphic Cluster</title></block>
+                <block type="text"><text id="qrj-7Z-CKn"><task/>Explore the <cv>addGraphicCluster</cv> function in the <b>GraphicCluster</b> file.</text></block>
+                <block type="image" source="crystalCluster" height="0.4">
+                    <description id="YNV-5E-Ivd">Picture of several colorful tall and short crystals.</description>
+                </block>
+                <block type="text"><text id="tYq-eD-jxZ"><task/>Looking at the function definition, try calling the <cv>addGraphicCluster</cv> function in the <b>main</b> <icon name="main"/> file.</text></block>
+                <groupblock disclosed="false">
+                    <block type="title"><title id="qui-99-TTT">Need Help?</title></block>
+                    <block type="code">addGraphicCluster(image: <literal>#imageLiteral(resourceName: "clearCrystal2Blue")</literal>, sounds: [.email, .galacticTelephone, .printer], at: Point(x: <num>260</num>, y: <num>-350</num>))</block>
+                </groupblock>
+                <block type="text"><text id="xgD-Eu-fj7"><task/><b>Run your code</b> and move your finger across the cluster to hear the different sounds. Double-tap on the cluster to hear all the sounds played together.</text></block>
+                <block type="text"><text id="xxx-Eu-fj7"><task/>Try changing the tint colors applied to the graphics in the <b>GraphicCluster</b> file.</text></block>
+            </blocks>
+        </step>
+        <step type="experiment">
+            <blocks>
+                <block type="title"><title id="g14-xZ-c1A">Graphic Loops</title></block>
+                <block type="text"><text id="Y2N-Sc-ADs"><task/>Explore the <cv>addGraphicLoops</cv> function in the <b>GraphicLoops</b> file.</text></block>
+                <block type="image" source="mushroomLoops" height="0.4">
+                    <description id="zXw-N2-32g">Picture of several different-sized mushrooms in a cluster.</description>
+                </block>
+                <block type="text"><text id="j46-5E-dwc"><task/>Looking at the function definition, try calling the <cv>addGraphicLoops</cv> function in the <b>main</b> <icon name="main"/> file.</text></block>
+                <groupblock disclosed="false">
+                    <block type="title"><title id="QQQ-99-TTT">Need Help?</title></block>
+                    <block type="code">addGraphicLoops(image: <literal>#imageLiteral(resourceName: "mushroom1Pink")</literal>, sounds: [.labBeats, .getReady], at: Point(x: <num>50</num>, y: <num>-100</num>))</block>
+                </groupblock>
+                <block type="text"><text id="NK9-RM-cSH"><task/><b>Run your code</b> and tap on the different graphics to toggle them on and off.</text></block>
+                <block type="text"><text id="NK9-RM-ccc"><task/>Change the method being called on graphic in the <b>GraphicLoops</b> file.</text></block>
+            </blocks>
+        </step>
+        <step type="experiment">
+            <blocks>
+                <block type="title"><title id="AjG-Yq-KxR">Add Tones</title></block>
+                <block type="text"><text id="PPs-ii-cis"><task/>Explore the <cv>addTones</cv> function in the <b>ToneGenerator</b> file.</text></block>
+                <block type="image" source="addInstrument" height="0.4">
+                    <description id="IUa-Za-nfw">Picture of an oyster with a pearl inside.</description>
+                </block>
+                <block type="text"><text id="dIw-LY-78Q"><task/>Looking at the function definition, try calling the <cv>addTones</cv> function in the <b>main</b> <icon name="main"/> file.</text></block>
+                <groupblock disclosed="false">
+                    <block type="title"><title id="KKK-99-TTT">Need Help?</title></block>
+                    <block type="code">addTones(image: <literal>#imageLiteral(resourceName: "oysterPinkBlue")</literal>, at: Point(x: <num>-300</num>, y: <num>100</num>))</block>
+                </groupblock>
+                <block type="text"><text id="ytX-4Y-RC3"><task/><b>Run your code</b> and move your finger over the graphic to play different tones.</text></block>
+                <block type="text"><text id="y66-4Y-RC3"><task/>Try changing the value of the range in the <b>ToneGenerator</b> file.</text></block>
+            </blocks>
+        </step>
+        <step type="check">
+            <blocks>
+                <block type="title"><title id="SfE-vw-GQQ">Function Definition</title></block>
+                <block type="text">
+                    <code><key>public func</key> createWaterSparkles(image: <type>Image</type>, sound: <type>Sound</type>) -> <type>Graphic</type> {
+                    
+                    }</code>
+                </block>
+                <block type="response" subtype="multiple-choice" name="functionDefinition" confirm="true">
+                    <prompt id="vk9-4a-zHH">How would you call the function above in the <b>main</b> <icon name="main"/> file? Select all that apply.</prompt>
+                    <option>
+                        <text id="j1s-hQ-wMP"><code><key>let</key> diamond = createWaterSparkles()</code></text>
+                        <feedback id="c3B-xb-ase">Don’t forget about the parameters! Try again!</feedback>
+                    </option>
+                    <option type="correct">
+                        <text id="MxQ-Ik-HNS"><code><key>let</key> diamond = createWaterSparkles(image: 💎, sound: .steelDrum)</code></text>
+                        <feedback id="XH7-pc-xQa">Correct! You can store the graphic returned by this function in a constant. This creates and stores a graphic with the 💎 image and the <cv>steelDrum</cv> sound.</feedback>
+                    </option>
+                    <option type="correct">
+                        <text id="eRf-7A-bWG"><code>createWaterSparkles(image: 💎, sound: .steelDrum)</code></text>
+                        <feedback id="ECt-zZ-Fz7">While this is technically correct, by not assigning the result of this function to a constant, you are not storing the returned graphic for later use, like placing it in the scene.</feedback>
+                    </option>
+                </block>
+                <assessment></assessment>
+                <block type="text"><text id="AFc-dN-XC2"><a href="@next">Next</a>, learn what else you can do with sounds and music.</text></block>
+            </blocks>
+        </step>
+    </steps>
+</trail>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>// Given a string, like 'ababaccdefgh', you are tasked with writting a function 
+// that determines if a string has the same frequency for all it's letters.
+// The string can have a single occurrence of a single character removed to meet this definition
+
+// Examples:
+// 'abc' = true (each letter occurs 1)
+// 'abba' = true (each letter occurs 2)
+// 'abcdee' = true (each letter occurs once if we remove 1 e)
+// 'aabbcdcdeed' = true (each letter occurs twice if we remove one d)
+// 'abbddeeffghgh' = true ( each letter occurs twice if we remove a)
+// 'abcdeee' = false (there is no letter we can remove such that each letter occurs the same number of times)
+// 'abbccddeee' = false ("")
+// 'aabccdee' = false ("")
+// 'aaaeeeddccc' = false
+
+func matchedCondition(withString string: String) -&gt; Bool {
+    return false
+}
+
+
+// Tests
+let test1 = "abc"
+print("\(test1) should be true, got: \(matchedCondition(withString: test1))")
+let test2 = "abba"
+print("\(test2) should be true, got: \(matchedCondition(withString: test2))")
+let test3 = "abcdee"
+print("\(test3) should be true, got: \(matchedCondition(withString: test3))")
+let test4 = "aabbcdcdeed"
+print("\(test4) should be true, got: \(matchedCondition(withString: test4))")
+let test5 = "abbddeeffghgh"
+print("\(test5) should be true, got: \(matchedCondition(withString: test5))")
+let test6 = "abcdeee"
+print("\(test6) should be true, got: \(matchedCondition(withString: test6))")
+let test7 = "abbccddeee"
+print("\(test7) should be true, got: \(matchedCondition(withString: test7))")
+let test8 = "aabccdee"
+print("\(test8) should be true, got: \(matchedCondition(withString: test8))")
+let test9 = "aaaeeeddccc"
+print("\(test9) should be true, got: \(matchedCondition(withString: test9))")
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 1739}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

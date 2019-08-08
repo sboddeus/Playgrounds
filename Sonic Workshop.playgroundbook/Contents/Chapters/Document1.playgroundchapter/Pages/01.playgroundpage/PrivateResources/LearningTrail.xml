@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trail name="0101">
+    <steps>
+        <step type="context">
+            <blocks>
+                <block type="title">
+                    <title id="aCh-na-h6v">Parameters and Return Types</title>
+                </block>
+                <block type="text">
+                    <text id="Ir3-TT-Lhk">Functions help you perform the same task over and over again very quickly.</text>
+                </block>
+                <block type="image" source="turtleWithCrystals" width="1.0" aspect="500:320">
+                    <description id="2Zc-Qr-abL">Image of a turtle swimming, with lots of crystals all over its back and head. There are rocks in the foreground, with exotic birds resting on the rocks to the left, and an open oyster with a pearl inside at center.</description>
+                </block>
+                <block type="text">
+                    <text id="Sbp-Gu-yvn">Using <a href="glossary://parameter">parameters</a> you can customize what happens when you call a function, and using a <a href="glossary://return%20type">return type</a> gives a value back when you call the function.</text>
+                </block>
+            </blocks>
+        </step>
+        <step type="find">
+            <blocks>
+                <block type="title">
+                    <title id="hZs-Ur-2qF">Function Breakdown</title>
+                </block>
+                <block type="text">
+                    <text id="2SK-K8-xpZ"><task/>Find the <cv>createCrystal</cv> function in the <b>Crystals</b> file. Touch each hotspot below to discover more about the function. If you close the <b>Crystals</b> file, or want to open it from another page, you can find it by tapping the <a href="glossary://files%20button">files button</a> <icon name="module"/> in the menu bar.</text>
+                </block>
+                <block type="image" source="funcParamsReturn" width="1.0" aspect="888:443">
+                    <description id="Asp-A9-8iF">Image of the same `createCrystal` function present in the Crystals file.</description>
+                    <interactive name="funcParamsReturn">
+                        <hotspot position="0.1, 0.07" action="popupText"><text id="N7s-d8-jfR">Public ensures your code is accessible from all files in your Playground.</text></hotspot>
+                        <hotspot position="0.4, 0.38" action="popupText"><text id="xEG-P8-TE4">The arrow indicates that what comes next is the return type.</text></hotspot>
+                        <hotspot position="0.8, 0.07" action="popupText"><text id="jGA-wq-Rq2">
+                            <cv>image</cv> and <cv>sound</cv> are the two parameters your function takes.
+                            
+                            These parameters make it possible for you to customize the look and sound of your graphics.</text></hotspot>
+                        <hotspot position="0.05, 0.57" action="popupText"><text id="TFi-jc-Vkv">This creates a graphic, which your function returns.</text></hotspot>
+                        <hotspot position="0.47, 0.85" action="popupText"><text id="CM5-g6-yjs">This tells the function to give back to the caller the graphic created above.</text></hotspot>
+                    </interactive>
+                </block>
+                <groupblock disclosed="false">
+                    <block type="title">
+                        <title id="Ygb-EK-2EV">Why Code in a Shared File?</title>
+                    </block>
+                    <block type="text">
+                        <text id="wEf-EP-YVe">Writing your code in a <a href="glossary://shared%20file">shared file</a> allows you to share your code across all of the pages in your Playground. Now you can write code once and use it everywhere!</text>
+                    </block>
+                </groupblock>
+            </blocks>
+        </step>
+        <step type="code">
+            <blocks>
+                <block type="title"><title id="2aW-Jz-3ks">Create Crystal Function</title></block>
+                <block type="text">
+                    <text id="IPj-AQ-K9V">The <cv>createCrystal</cv> function is going to return a graphic. This means you can call <cv>createCrystal</cv> and store the returned value as a <a href="glossary://variable">variable</a>.</text>
+                </block>
+                <block type="image" source="graphicCrystal">
+                    <description id="3WI-QQ-59v">The outline of a crystal.</description>
+                </block>
+                <block type="text">
+                    <text id="d8V-r7-yIs"><task/>Call the <cv>createCrystal</cv> function in the <a href="glossary://main">main</a> <icon name="main"/> file and place your graphic in the Scene.</text>
+                </block>
+                <block type="text">
+                    <text id="wTV-vT-QRI">Open the <b>main</b> <icon name="main"/> file.</text>
+                </block>
+                <block type="text">
+                    <text id="Uhm-NG-8vf">Write, drag and drop, or copy and paste the following code below this comment:
+                    <cmt id="NDN-G8-veT">// Call your function.</cmt></text>
+                </block>
+                <block type="code">
+                    <key>let</key> crystal = createCrystal(image: <literal>#imageLiteral(resourceName: "darkCrystal1Blue")</literal>, sound: .handDrums)
+                    
+                    scene.place(crystal, at: Point(x: <num>0</num>, y: <num>0</num>))
+                </block>
+                <block type="text"><text id="mEe-kI-4vX"><task/><b>Run your code</b>. You should see your crystal in the scene.</text></block>
+            </blocks>
+        </step>
+        <step type="code">
+            <blocks>
+                <block type="title"><title id="TqZ-Hv-UWY">Make Some Noise</title></block>
+                <block type="text">
+                    <text id="mce-y2-B5H">You can use closures anywhere, including inside a function. Practice your closure skills by using a closure inside the <cv>createCrystal</cv> function in the <b>Crystals</b> file.</text>
+                </block>
+                <block type="text">
+                    <text id="HQb-q2-JZZ"><task/>Use a closure to make your graphic play a sound when you tap it. Pass in the sound from the parameter.</text>
+                </block>
+                <block type="text">
+                    <text id="IxY-6s-v9S">
+                        Open the <b>Crystals</b> file and write your code below this comment:
+                        <cmt id="hfP-CH-HJk">// Add a tap handler.</cmt>
+                    </text>
+                </block>
+                <groupblock disclosed="false">
+                    <block type="title"><title id="prt-n3-Qtf">Need Help?</title></block>
+                    <block type="code">
+                        graphic.setOnTapHandler {
+                            playSound(sound, volume: <num>100</num>)
+                            graphic.glow()
+                        }
+                    </block>
+                </groupblock>
+                <block type="text">
+                    <text id="QNb-sf-QTy"><task/><b>Run your code</b> and tap your crystal. You should hear it play a sound and see it do what you specified in the handler.</text>
+                </block>
+            </blocks>
+        </step>
+        <step type="check">
+            <blocks>
+                <block type="title"><title id="Wjv-Gq-PT1">Return Types</title></block>
+                <block type="response" subtype="single-choice" name="returnTypes" confirm="true">
+                    <prompt id="iUK-BY-aHg">What does it mean for a function to <b>return</b> a graphic?</prompt>
+                    <option type="correct">
+                        <text id="zHc-ck-pBZ">The function passes back a value when it’s done executing — in this case, a graphic.</text>
+                        <feedback id="PrF-LM-xAc">Correct! When a function has a return type, it means it passes back a value, in this case a graphic, when it’s done executing.</feedback>
+                    </option>
+                    <option>
+                        <text id="PZW-3a-cA9">The function takes the type <cv>Image</cv> as an input.</text>
+                        <feedback id="Qgn-15-QQR">No, this is describing a parameter, not a return type. Try again!</feedback>
+                    </option>
+                    <option>
+                        <text id="97S-B2-Q45">To describe the task the function performs.</text>
+                        <feedback id="IIQ-kk-4pw">No, this describes a function definition. Try again!</feedback>
+                    </option>
+                </block>
+                <assessment></assessment>
+                <block type="text"><text id="tCi-DT-tVK"><a href="@next">Next</a>, make your own function.</text></block>
+            </blocks>
+        </step>
+    </steps>
+</trail>
+
+

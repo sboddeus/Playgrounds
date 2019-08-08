@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trail name="0100">
+    <steps>
+        <step type="context">
+            <blocks>
+                <block type="title"><title id="fzz-xh-bp8">Welcome to Sonic Workshop!</title></block>
+                <block type="text"><text id="jSI-sW-SLX">Where you’ll use your coding skills to make music.</text></block>
+                <block type="image" source="highResCrystalCave" height="0.75"><description id="PWI-Bg-3K7">Picture of a robust musical cave scene with lots of crystals and gems placed all over the top and bottom of the cave.</description></block>
+                <block type="text"><text id="YKq-Bp-GPM">In your crystal cave, you’ll create graphics to play along with the music and do something when tapped.</text></block>
+            </blocks>
+        </step>
+        <step type="code">
+            <blocks>
+                <block type="title"><title id="Pxg-Xe-bsk">Sound Crystal</title></block>
+                <block type="text"><text id="4Ux-ph-Kak"><task/>To start making music in your cave, create a new Graphic, and set its image to a crystal (or any image of your choice).</text></block>
+                <block type="image" source="soundCrystal"><description id="DwP-pI-3xq">Image of a short, pink crystal.</description></block>
+                <block type="text">
+                    <text id="IC1-6m-WVG">Write, drag and drop, or copy and paste the following code below this comment:
+                    <cmt id="cYa-Rq-BT1">// Create a new graphic.</cmt></text>
+                </block>
+                <block type="code"><key>var</key> crystal = Graphic(image: <literal>#imageLiteral(resourceName: "clearCrystal1Pink")</literal>)</block>
+                <block type="text">
+                    <text id="T1C-gP-ZLe"><task/>Place your graphic in the scene by writing the following code below this comment:
+                    <cmt id="USN-Yu-Zgk">// Place your graphic in the scene.</cmt></text>
+                </block>
+                <block type="code">scene.place(crystal, at: Point(x: <num>240</num>, y: <num>-180</num>))</block>
+                <block type="text"><text id="Hvj-Jg-2SD"><task/><b>Run your code</b> to see your graphic.</text></block>
+            </blocks>
+        </step>
+        <step type="code">
+            <blocks>
+                <block type="title"><title id="sP6-Q1-waI">Playing a Sound</title></block>
+                <block type="text"><text id="cKB-2N-VC9"><task/>Use a <a href="glossary://closure">closure</a> to play a sound when you tap your graphic.</text></block>
+                <groupblock disclosed="false">
+                    <block type="title"><title id="N3U-Fe-PW7">What’s a Closure?</title></block>
+                    <block type="text"><text id="N3U-FF-PW7">Closures are self-contained blocks of functionality that you can pass around and use in your code.</text></block>
+                    <block type="text"><text id="sjZ-C8-V4h">Instead of creating a function and then passing that function into <cv>setOnTapHandler</cv>, like this:</text></block>
+                    <block type="image" source="fullFunction"><description id="zF5-BT-U1t">Image of a function that named tap-Handler, that calls the glow method on crystal. Below the function definition, the function is called by the set-On-Tap-Handler for crystal.</description></block>
+                    <block type="text">
+                        <text id="fbf-1q-dxU">You can use a <b>closure</b>! This allows you to run a function in place, without giving it a name, like <cv>tapHandler</cv>.</text>
+                    </block>
+                    <block type="image" source="closure"><description id="GNT-Yb-1wB">Image of a closure, where crystal calls the set-On-Tap-Handler, and then calls the glow method on crystal inside the closure.</description>
+                        <interactive name="simpleClosure">
+                            <hotspot position="0.15, 0.13" action="popupText"><text id="9CK-Pg-cU6">In this example, you start with the object you want to modify, <cv>crystal</cv>.</text></hotspot>
+                            <hotspot position="0.45, 0.13" action="popupText"><text id="Dyf-i2-Y8B">Using dot notation you then call the method, <cv>setOnTapHandler</cv>, which expects a function as an argument.</text></hotspot>
+                            <hotspot position="0.75, 0.13" action="popupText"><text id="KSe-JU-446">To define your function, use the closure syntax by placing the body of your function between curly braces.</text></hotspot>
+                            <hotspot position="0.3, 0.85" action="popupText"><text id="DFD-te-mUN">Inside the closure, is the code you want to execute.</text></hotspot>
+                        </interactive>
+                    </block>
+                </groupblock>
+                <block type="text">
+                    <text id="gmh-3H-yG1">Write, drag and drop, or copy and paste the following code below this comment:
+                        <cmt id="FWS-tA-Fx9">// Add a tap handler.</cmt></text>
+                </block>
+                <block type="code">
+                    crystal.setOnTapHandler {
+                        <cmt id="hsM-a2-WSm">// Play a sound.</cmt>
+                        playSound(.caveBeats, volume: <num>100</num>)
+                        <cmt id="FSi-aj-KAC">// Graphic methods.</cmt>
+                    
+                    }
+                </block>
+                <block type="text">
+                    <text id="f9H-WP-tbV"><task/>Change the sound and volume by editing the <a href="glossary://argument">arguments</a> in the <cv>playSound</cv> function call.</text>
+                </block>
+                <block type="text">
+                    <text id="ghf-zL-jyW"><task/><b>Run your code</b> and tap your graphic. You should hear the sound you specified.</text>
+                </block>
+            </blocks>
+        </step>
+        <step type="experiment">
+            <blocks>
+                <block type="title"><title id="JfX-Gq-rjA">Add Visual Flair</title></block>
+                <block type="text">
+                    <text id="gHW-Mu-mNZ"><task/>In addition to playing a sound, you can call <a href="glossary://method">methods</a> and set <a href="glossary://property">properties</a> on your graphics. Mix, match, and edit the suggestions below.</text>
+                </block>
+                <block type="text">
+                    <text id="vaK-bN-tPv">Write your code inside your closure, below this comment:
+                        <cmt id="VDv-jY-w96">// Graphic methods.</cmt></text>
+                </block>
+                <groupblock disclosed="false">
+                    <block type="title"><title id="mZw-uD-im8">Glow</title></block>
+                    <block type="code">crystal.glow()</block>
+                </groupblock>
+                <groupblock disclosed="false">
+                    <block type="title"><title id="6qw-pB-Zwq">Shake</title></block>
+                    <block type="code">crystal.shake(duration: <num>0.5</num>)</block>
+                </groupblock>
+                <groupblock disclosed="false">
+                    <block type="title"><title id="e8t-fv-ESi">Scale</title></block>
+                    <block type="code">crystal.scale = <num>2.0</num></block>
+                </groupblock>
+                <block type="text"><text id="HHH-Jg-2SD"><task/><b>Run your code</b> and tap your graphic to see what it does.</text></block>
+            </blocks>
+        </step>
+        <step type="experiment">
+            <blocks>
+                <block type="title"><title id="zMW-WZ-S3Q">Experiment with the Code</title></block>
+                <block type="text"><text id="VS1-tz-1gL"><task/>Now that you know how to create a graphic that plays a sound, make this cave your own by trying some of the options below:</text></block>
+                <groupblock disclosed="false">
+                    <block type="title"><title id="92U-Bc-uFp">More Graphics</title></block>
+                    <block type="text"><text id="C79-ZU-wDM">Using your first graphic as a guide, try making more graphics that play sounds and do something when you tap them.</text></block>
+                </groupblock>
+                <groupblock disclosed="false">
+                    <block type="title"><title id="92U-Bc-UUU">Color Your Graphics</title></block>
+                    <block type="text"><text id="C79-ZU-WWW">Use the tint color property to change the color of your graphics. This will look especially good if you are using a <a href="glossary://grayscale">grayscale</a> graphic. Write your code either at the top level of your code, or in your tap handler.</text></block>
+                    <block type="code">crystal.setTintColor(<literal>#colorLiteral(red: 0.808, green: 0.0274, blue: 0.333, alpha: 1.0)</literal>, blend: <num>0.9</num>)</block>
+                </groupblock>
+                <groupblock disclosed="false">
+                    <block type="title"><title id="Hbs-dp-Q7E">Background Music</title></block>
+                    <block type="text"><text id="vZG-T7-9NW">Edit the line of code that sets the background music:</text></block>
+                    <block type="text"><code>playMusic(Music.cave)</code></block>
+                </groupblock>
+                <groupblock disclosed="false">
+                    <block type="title"><title id="UDN-XF-pLI">Background Image</title></block>
+                    <block type="text"><text id="ZLs-xA-Qqb">Change the background image by tapping on the image <a href="glossary://literal">literal</a> at the end of the line of code that reads <cv>scene.backgroundImage</cv> and choose a different image from the image library.</text></block>
+                </groupblock>
+                <block type="text"><text id="Hvj-HH-2SD"><task/><b>Run your code</b> to see and hear the changes you’ve made.</text></block>
+            </blocks>
+        </step>
+        <step type="check">
+            <blocks>
+                <block type="title"><title id="f8U-rt-A4A">Closures</title></block>
+                <block type="response" subtype="single-choice" name="closures" confirm="true">
+                    <prompt id="iyq-K1-U5T">Which code snippet has a closure?</prompt>
+                    <option>
+                        <text id="8TS-D5-NpI"><code>crystal.glow()</code></text>
+                        <feedback id="VLe-s6-rcY">No, <cv>glow()</cv> is a method call. Remember, a closure uses curly braces to define a block of functionality right in place. Try again!</feedback>
+                    </option>
+                    <option type="correct">
+<text id="mvb-kn-2bm"><code>crystal.setOnDoubleTapHandler {
+    playSound(.chime)
+    crystal.glow()
+}</code></text>
+                        <feedback id="438-gU-mAP">Correct! This is a closure with no arguments. Well done!</feedback>
+                    </option>
+                    <option>
+<text id="X1Y-8U-Mhq"><code><key>func</key> tapHandler() {
+    playSound(.chime)
+    crystal.glow()
+}
+crystal.setOnTapHandler(tapHandler)
+</code></text>
+                        <feedback id="Dcb-fa-Ycg">No, the keyword <cv>func</cv> followed by a name indicates this is a function, not a closure. Try again!</feedback>
+                    </option>
+                </block>
+                <assessment></assessment>
+                <block type="text"><text id="D6g-gq-ewB"><a href="@next">Next</a>, write a function in a <a href="glossary://shared%20file">shared file</a>.</text></block>
+            </blocks>
+        </step>
+    </steps>
+</trail>
+

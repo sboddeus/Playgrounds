@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>// This test involves working out how long "zones" or views, have been exposed for in a scrolling view
+
+import UIKit
+import PlaygroundSupport
+
+let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: 200, height: 500))
+
+let page = PlaygroundPage.current
+page.needsIndefiniteExecution = true
+PlaygroundPage.current.liveView = tableView
+
+tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+
+class StaticSource: NSObject, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -&gt; Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int {
+        return 2000
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        cell.textLabel?.text = "Section \(indexPath.section) Row \(indexPath.row)"
+        
+        return cell
+    }
+}
+
+let source = StaticSource()
+tableView.dataSource = source
+tableView.reloadData()
+
+
+// Only recalculate every 10th frame
+let sigFrameCount = 10
+var sigFrameRate = true
+// True means sig diff, false means display link
+let sigDiffOrDisplayLink = true
+
+typealias ViewID = String
+class ExposureStatisicsCalulator {
+    private(set) var viewsForTime = [ViewID: TimeInterval]()
+    private var currentViews = [ViewID: TimeInterval]()
+    
+    func reset() {
+        viewsForTime = [ViewID: TimeInterval]()
+        currentViews = [ViewID: TimeInterval]()
+    }
+    
+    func update(withViews views: [UIView], time: TimeInterval) {
+        for view in views {
+            // If a view is not contained in current views we should add it
+            if !currentViews.contains(where: { $0.0 == view.uniqueDescriptorInSuperview }) {
+                currentViews[view.uniqueDescriptorInSuperview] = time
+            }
+        }
+        
+        // For all views in currentViews that are not in the new view set
+        // we update the total times they were shown on screen
+        let mappedIds = views.map({ $0.uniqueDescriptorInSuperview })
+        for view in currentViews.filter({ (key, value) -&gt; Bool in
+            !mappedIds.contains(where: { $0 == key })
+        }) {
+            viewsForTime[view.key] = (viewsForTime[view.key] ?? 0) + time - view.value
+            currentViews[view.key] = nil
+            //Logger.log(type: .debug, message: "VIEW UPDATED: \(view.key), TIME: \(viewsForTime[view.key])")
+        }
+    }
+}
+
+
+// Globally Collect Stats in a Bucket
+// This should be refactored for final code
+var expoStatMan = ExposureStatisicsCalulator()
+var paintTheViews = true
+// Used to calcualte how far a user has to scroll before we calculate a difference
+// can be played around with for optimisation purposes.
+// Another option would be to attach our analysis to frame rate.
+// Say, only re-calculate our stats every 10th frame?
+let sigDiffThreshold = 5
+
+class ScrollViewJacker: NSObject {
+    
+    private(set) weak var scrollView: UIScrollView?
+    private weak var forwardingScrollViewDelegate: UIScrollViewDelegate?
+    
+    private var token: NSKeyValueObservation?
+    
+    var isEmpty: Bool {
+        return scrollView == nil
+    }
+    
+    init(scrollView: UIScrollView) {
+        super.init()
+        
+        self.scrollView = scrollView
+        self.forwardingScrollViewDelegate = scrollView.delegate
+        scrollView.delegate = self
+        
+        token = observeDelegateChange(on: scrollView)
+        
+        let visibleSubViews = scrollView.visibleSubViews
+        expoStatMan.update(withViews: visibleSubViews, time: Date().timeIntervalSince1970)
+    }
+    
+    private func observeDelegateChange(on scrollView: UIScrollView) -&gt; NSKeyValueObservation {
+        return scrollView.observe(\.delegate) { [weak self] scrollView, _ in
+            guard let strongsSelf = self else { return }
+            if scrollView.delegate as? ScrollViewJacker == nil {
+                strongsSelf.forwardingScrollViewDelegate = strongsSelf.scrollView?.delegate
+                scrollView.delegate = strongsSelf
+            }
+        }
+    }
+    
+    // Forwarding to forwardDelegate
+    open override func responds(to aSelector: Selector?) -&gt; Bool {
+        guard let aSelector = aSelector else {
+            return false
+        }
+        let respondesToSelector = super.responds(to: aSelector)
+            || forwardingScrollViewDelegate?.responds(to: aSelector) == true
+        
+        return respondesToSelector
+    }
+    
+    override  func forwardingTarget(for aSelector: Selector?) -&gt; Any? {
+        guard let aSelector = aSelector else {
+            return nil
+        }
+        if forwardingScrollViewDelegate?.responds(to: aSelector) ?? false {
+            return forwardingScrollViewDelegate
+        }
+        return nil
+    }
+    
+    // Deinitialisation
+    deinit {
+        token?.invalidate()
+    }
+}
+
+extension ScrollViewJacker {
+    
+    static func == (lhs: ScrollViewJacker, rhs: UIScrollView) -&gt; Bool {
+        return lhs.scrollView == rhs
+    }
+}
+
+extension ScrollViewJacker: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard sigDiffOrDisplayLink ? sigDiff(scrollView) : sigFrameRate  else { return }
+        sigFrameRate = false
+        //print("TTPUI Should calc and paint")
+        let visibleSubViews = scrollView.visibleSubViews
+        expoStatMan.update(withViews: visibleSubViews, time: Date().timeIntervalSince1970)
+        
+        for view in visibleSubViews {
+            if let thing = expoStatMan.viewsForTime[view.uniqueDescriptorInSuperview] ?? nil, paintTheViews {
+                let red = CGFloat(Int(thing)%255 * 10)/255
+                view.backgroundColor = UIColor(red: red, green: 0, blue: 1-red, alpha: 1)
+            }
+        }
+    }
+    
+    // This is a naive implementation of a diff calculator, but it actually
+    // provides a pretty sound PoC
+    private func sigDiff(_ scrollView: UIScrollView) -&gt; Bool {
+        let xValue = scrollView.contentOffset.x == 0 ? false : Int(scrollView.contentOffset.x) % sigDiffThreshold == 0
+        let yValue = scrollView.contentOffset.y == 0 ? false : Int(scrollView.contentOffset.y) % sigDiffThreshold == 0
+        return xValue || yValue
+    }
+}
+
+extension UIScrollView {
+    // computationally expensive property
+    var visibleSubViews: [UIView] {
+        return subviewsVisible(inReferenceView: self)
+    }
+}
+
+extension UIView {
+    // This should be re-written to remove the recursive call
+    // instead use a iteratative, stack based approach
+    func subviewsVisible(inReferenceView view: UIView) -&gt; [UIView] {
+        var views = [UIView]()
+        for subview in subviews {
+            // This section especially will need to be checked for correctness.
+            // The whole algorithm relies on this line correctly
+            // stating if the subview is exposed with respect to the view
+            if view.bounds.intersects(subview.frame) {
+                views.append(subview)
+                views += subview.subviewsVisible(inReferenceView: view)
+            }
+        }
+        return views
+    }
+}
+
+class ScrollViewManager: NSObject {
+    
+    private var scrollViews = [ScrollViewJacker]()
+    
+    func register(scrollView: UIScrollView) {
+        if !scrollViews.contains { $0 == scrollView } {
+            scrollViews.append(ScrollViewJacker(scrollView: scrollView))
+        }
+        cleanScrollViews()
+    }
+    
+    func unregister(scrollView: UIScrollView) {
+        scrollViews = scrollViews.filter { $0 != scrollView }
+    }
+    
+    override init() {
+        super.init()
+        if !sigDiffOrDisplayLink {
+            createDisplayLink()
+        }
+    }
+    
+    private func cleanScrollViews() {
+        scrollViews = scrollViews.filter { !$0.isEmpty }
+    }
+    
+    var frameCount = 0
+    private func createDisplayLink() {
+        let displaylink = CADisplayLink(target: self,
+                                        selector: #selector(step))
+        displaylink.add(to: RunLoop.current, forMode: .tracking)
+        
+        displaylink.add(to: .current,
+                        forMode: RunLoop.Mode.default)
+    }
+    
+    @objc private func step(displaylink: CADisplayLink) {
+        frameCount += 1
+        if frameCount &gt;= sigFrameCount {
+            sigFrameRate = true
+            frameCount = 0
+        }
+    }
+}
+
+let manager = ScrollViewManager()
+manager.register(scrollView: tableView)
+
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 8487}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

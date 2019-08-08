@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trail name="0102">
+    <steps>
+        <step type="context">
+            <blocks>
+                <block type="title"><title id="51f-dB-mj9">Write Your Own Function</title></block>
+                <block type="text">
+                    <text id="fXw-BL-cN1">Now that you know how to write functions in a <a href="glossary://shared%20file">shared file</a>, try writing your own.</text>
+                </block>
+                <block type="image" source="crystalCluster" height="0.65">
+                    <description id="zR5-Iq-m1U">Picture of serveral colorful crystals in a cluster.</description>
+                </block>
+                <block type="text">
+                    <text id="R31-fD-V16">The next few steps will help you integrate the things you’ve learned on the previous pages, such as using a handler, playing sounds, and calling methods.</text>
+                </block>
+            </blocks>
+        </step>
+        <step type="code">
+            <blocks>
+                <block type="title"><title id="dfm-qJ-CJG">Starting Your Function</title></block>
+                <block type="text"><text id="G1I-Mv-XIx">Writing your own functions takes practice. Follow the steps below to get started.</text></block>
+                <block type="text"><text id="A2k-WX-aee"><task/>Write a new <a href="glossary://function%20definition">function definition</a>, in the <b>Crystals</b> file, that takes two parameters - an image and a sound - and returns a graphic.</text></block>
+                <groupblock disclosed="false">
+                    <block type="title"><title id="3yF-2r-W1s">Need Help?</title></block>
+                    <block type="text"><text id="Lhi-65-HXb">Write your code in the <b>Crystals</b> file. Name your function anything you want.</text></block>
+                    <block type="code">
+                        <key>public func</key>  &lt;#function name#&gt; (image: <type>Image</type>, sound: <type>Sound</type>) -&gt; <type>Graphic</type> {
+                        
+                        }
+                    </block>
+                    <block type="text"><text id="Lhi-65-HHH">The little red dot is a <a href="glossary://compiler%20error">compiler error</a>. It’s warning you to return a <cv>Graphic</cv>. Let’s do that in the next step.</text></block>
+                </groupblock>
+                <block type="text"><text id="ybM-wU-u1G"><task/>In the body of your function, create a <cv>Graphic</cv>. Then return the <cv>Graphic</cv> you created using the keyword <cv>return</cv>.</text></block>
+                <groupblock disclosed="false">
+                    <block type="title"><title id="6SD-pA-xfr">Need Help?</title></block>
+                    <block type="text"><text id="Vup-ZM-LzW">Write your code between the opening and closing curly braces.</text></block>
+                    <block type="code">
+                        <key>let</key> graphic = Graphic(image: image)
+                        
+                        <key>return</key> graphic
+                    </block>
+                </groupblock>
+                <block type="text"><text id="mGx-Ve-Ke3"><task/>Call your function in the <a href="glossary://main">main</a> <icon name="main"/> file. Remember, your function returns a <cv>Graphic</cv>. To store that graphic, create a new variable, then place it in the scene.</text></block>
+                <groupblock disclosed="false">
+                    <block type="title"><title id="sVT-ra-ffE">Need Help?</title></block>
+                    <block type="text"><text id="ujg-Mn-Ap1">Write your code in the <b>main</b> <icon name="main"/> file.</text></block>
+                    <block type="code">
+                        <key>var</key> mushroom = &lt;#function name#&gt;(image: &lt;#image#&gt;, sound: &lt;#sound#&gt;)
+                        
+                        scene.place(mushroom, at: Point(x: <num>-40</num>, y: <num>-200</num>))
+                    </block>
+                </groupblock>
+                <block type="text"><text id="S1r-kA-vcB"><task/><b>Run your code</b> to see your new graphic in the scene.</text></block>
+            </blocks>
+        </step>
+        <step type="code">
+            <blocks>
+                <block type="title"><title id="zc5-Ku-Jt6">Add a Finger Moved Handler</title></block>
+                <block type="text"><text id="kXk-n2-Vjj"><task/>Trigger your graphic to do something when you move your finger across it. Write your code above the <a href="glossary://return%20type">return</a> statement in your function in the <b>Crystals</b> file.</text></block>
+                <block type="code">
+                    graphic.setOnFingerMovedHandler { touch <key>in</key>
+                    
+                    }
+                </block>
+                <groupblock disclosed="false">
+                    <block type="title"><title id="sSS-ra-ffE">What Does <cv>touch in</cv> Mean?</title></block>
+                     <block type="text"><text id="gDP-Qe-wxr">A finger moved handler takes the location of your touch as an argument. You can then use this value (your touch position) to manipulate your code.</text></block>
+                     <block type="text"><text id="PPP-Qe-wxr">The <cv>in</cv> keyword is part of the closure syntax. It separates the arguments, such as <cv>touch</cv>, from the body of the closure.</text></block>
+                </groupblock>
+                <block type="text"><text id="4IC-ec-r6P"><task/>Inside your handler, change the tint color of your graphic using the position of your touch along the x axis, <cv>touch.position.x</cv>.</text></block>
+                <block type="code">
+                    <key>let</key> color = Color(hue: fabs(touch.position.x) / graphic.size.width, saturation: <num>0.5</num>, brightness: <num>1.0</num>, alpha: <num>0.6</num>)
+                    
+                    graphic.setTintColor(color, blend: <num>1.0</num>)
+                </block>
+                <block type="text"><text id="Jyp-8W-iii"><task/><b>Run your code</b> and drag your finger over the graphic to see it change colors.</text></block>
+            </blocks>
+        </step>
+        <step type="experiment">
+            <blocks>
+                <block type="title"><title id="RHX-vq-GTA">Add a Tap Handler</title></block>
+                <block type="text"><text id="kXk-n2-VCJ"><task/>In addition to your finger moved handler, you can add a tap handler. Write your code above the <a href="glossary://return%20type">return</a> statement in your function.</text></block>
+                <block type="code">
+                    graphic.setOnTapHandler {
+                    
+                    }
+                </block>
+                <block type="text"><text id="Jyp-8W-VXD"><task/>Add a sound inside your handler.</text></block>
+                <groupblock disclosed="false">
+                    <block type="title"><title id="tWb-Jk-8cY">Play a Sound</title></block>
+                    <block type="code">
+                        playSound(sound, volume: <num>80</num>)
+                    </block>
+                </groupblock>
+                <groupblock disclosed="false">
+                    <block type="title"><title id="2gY-9y-tn3">Play Instrument</title></block>
+                    <block type="code">
+                        playInstrument(.bassSynth, note: <num>80</num>, volume: <num>80</num>)
+                    </block>
+                </groupblock>
+                <groupblock disclosed="false">
+                    <block type="title"><title id="GSL-9i-4Tq">Play Music</title></block>
+                    <block type="code">
+                        playMusic(.cave, volume: <num>80</num>)
+                    </block>
+                </groupblock>
+                <block type="text"><text id="yj6-HT-4H3"><task/><b>Run your code</b> and tap your graphic to hear the sound or music you specified.</text></block>
+            </blocks>
+        </step>
+        <step type="experiment">
+            <blocks>
+                <block type="title"><title id="C5s-iJ-nLk">Looping Sounds</title></block>
+                <block type="text"><text id="auJ-L6-Kfx">Instead of playing a sound once, use the tap handler to toggle a loop on and off.</text></block>
+                <block type="text"><text id="Nx6-ss-nzJ"><task/>Create a new loop by passing in a sound. Write your code <i>above</i> the tap handler.</text></block>
+                <block type="code"><key>let</key> loop = Loop(sound: sound)</block>
+                <block type="text"><text id="SAG-ZR-7TD"><task/>Toggle the loop on and off when you tap the graphic. Write your code <i>inside</i> the tap handler. You may also want to delete any other sounds or music calls inside your tap handler.</text></block>
+                <block type="code">loop.toggle()</block>
+                <block type="text"><text id="wVe-jG-2IU"><task/><b>Run your code</b> and tap the graphic. The sound should repeat until you tap the graphic again to turn off the sound.</text></block>
+                <groupblock disclosed="false">
+                    <block type="title"><title id="Vuw-bI-ysU">Code Example</title></block>
+                    <block type="code">
+                        <key>public func</key> loopingMushroom(image: <type>Image</type>, sound: <type>Sound</type>) -&gt; <type>Graphic</type> {
+                            <key>let</key> graphic = Graphic(image: image)
+                            
+                            <key>let</key> loop = Loop(sound: sound)
+                            
+                            graphic.setOnTapHandler {
+                                loop.toggle()
+                            }
+                        
+                            <key>return</key> graphic
+                        }
+                    </block>
+                </groupblock>
+            </blocks>
+        </step>
+        <step type="experiment">
+            <blocks>
+                <block type="title"><title id="Wiu-Eh-H9L">Add Visual Flair</title></block>
+                <block type="text"><text id="qNu-nr-Z2n"><task/>Call a method inside your tap handler. Mix, match, and edit the suggestions below:</text></block>
+                <groupblock disclosed="false">
+                    <block type="title"><title id="Jms-eF-KLC">Glow</title></block>
+                    <block type="code">graphic.glow()</block>
+                </groupblock>
+                <groupblock disclosed="false">
+                    <block type="title"><title id="qui-9d-tym">Shake</title></block>
+                    <block type="code">graphic.shake(duration: <num>0.5</num>)</block>
+                </groupblock>
+                <groupblock disclosed="false">
+                    <block type="title"><title id="AhI-w9-m65">Scale</title></block>
+                    <block type="code">graphic.scale = <num>2.0</num></block>
+                </groupblock>
+                <block type="text"><text id="yyy-HT-4H3"><task/><b>Run your code</b> and tap your graphic to see it do the thing you specified.</text></block>
+            </blocks>
+        </step>
+        <step type="check">
+            <blocks>
+                <block type="title"><title id="POO-4N-q6u">Check Your Work</title></block>
+                <block type="response" subtype="multiple-choice" name="selfAssessment01">
+                    <prompt id="wKt-xs-JOY"><task/><b>Run your code</b> and try out your new function. Check for the following:</prompt>
+                    <option type="correct">
+                        <text id="JOY-tu-6Qh">Your function works as expected.</text>
+                        <feedback id="YES-1N-Ax3">Well done!</feedback>
+                    </option>
+                    <option type="correct">
+                        <text id="6HX-JF-RKS">Your function sounds and looks the way you want.</text>
+                        <feedback id="PtY-NO-ckS">Well done!</feedback>
+                    </option>
+                </block>
+                <assessment></assessment>
+                <block type="text"><text id="tCi-Hh-tVK"><a href="@next">Next</a>, try calling pre-built functions.</text></block>
+            </blocks>
+        </step>
+    </steps>
+</trail>
+
