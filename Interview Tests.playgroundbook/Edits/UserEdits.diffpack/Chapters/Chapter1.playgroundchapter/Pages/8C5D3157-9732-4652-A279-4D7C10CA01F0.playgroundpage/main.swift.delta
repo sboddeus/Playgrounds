@@ -29,7 +29,7 @@ let view5 = UIView(frame: CGRect(x: 150, y: 10, width: 130, height: 400))
 view5.backgroundColor = .purple
 let view6 = UIView(frame: CGRect(x: 10, y: 10, width: 100, height: 300))
 view6.backgroundColor = .blue
-let view7 = UIView(frame: CGRect(x: 9, y: 300, width: 25, height: 200))
+let view7 = UIView(frame: CGRect(x: 0, y: 300, width: 25, height: 200))
 view7.backgroundColor = .white
 let view8 = UIView(frame: CGRect(x: 250, y: 150, width: 100, height: 400))
 view8.backgroundColor = .cyan
@@ -43,10 +43,21 @@ containerView.addSubview(view8)
 let all = [view4, view5, view6, view7, view8]
 
 func bounding(ofBoxes boxes: [UIView]) -&gt; UIView {
+    guard boxes.count &gt; 0 else { return UIView() }
     
+    let pointPair = boxes.reduce((boxes[0].frame.origin, boxes[0].frame.origin)) { (result, next) -&gt; (CGPoint, CGPoint) in
+        let nextFrame = next.frame
+        let originX = result.0.x &lt; nextFrame.origin.x ? result.0.x : nextFrame.origin.x
+        let originY = result.0.y &lt; nextFrame.origin.y ? result.0.y : nextFrame.origin.y
+        let endX = result.1.x &gt; (nextFrame.origin.x + nextFrame.size.width) ? result.1.x : (nextFrame.origin.x + nextFrame.size.width)
+        let endY = result.1.y &gt; (nextFrame.origin.y + nextFrame.size.height) ? result.1.y : (nextFrame.origin.y + nextFrame.size.height)
+        
+        return (CGPoint(x: originX, y: originY), CGPoint(x: endX, y: endY))
+    }
     
+    let view = UIView(frame: CGRect(origin:pointPair.0, size: CGSize(width: pointPair.1.x - pointPair.0.x, height: pointPair.1.y - pointPair.0.y) ))
     
-    return UIView(frame: CGRect(origin: CGPoint(x: 0, y:0), size: CGSize(width: 100, height: 100)))
+    return view
 }
 
 func draw(inContainer: UIView, boxBounding: [UIView]) {
@@ -61,7 +72,7 @@ func draw(inContainer: UIView, boxBounding: [UIView]) {
 draw(inContainer: containerView, boxBounding: all)
 </string>
 			<key>ModifiedRange</key>
-			<string>{0, 1773}</string>
+			<string>{0, 2586}</string>
 			<key>OriginalContent</key>
 			<string>
 </string>
