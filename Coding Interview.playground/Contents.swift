@@ -47,12 +47,10 @@ view6.addSubview(view7)
 
 
 func views(ofDepth depth: Int, withRootView rootView: UIView) -> [UIView] {
-    guard depth != 0 else { return [rootView] }
-    return rootView.subviews.flatMap({ subview in views(ofDepth: depth - 1, withRootView: subview) })
 }
 
 
-for view in views(ofDepth: 10, withRootView: view1) {
+for view in views(ofDepth: 3, withRootView: view1) {
     view.layer.borderColor = UIColor.gray.cgColor
     view.layer.borderWidth = 5
 }

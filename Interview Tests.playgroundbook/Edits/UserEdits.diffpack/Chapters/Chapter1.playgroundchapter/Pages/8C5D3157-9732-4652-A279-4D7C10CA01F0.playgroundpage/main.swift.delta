@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>// In this exercise we are given a series of rects.
+// we want to calculate the tightest bouding box for these rects.
+// Fill out the required function definition, 
+// which is given an array of rects and should return a rect that is the bounding box
+
+import UIKit
+import PlaygroundSupport
+
+let containerView = UIView(frame: CGRect(x: 0, y: 0, width: 375, height: 667))
+containerView.backgroundColor = .black
+
+let page = PlaygroundPage.current
+page.needsIndefiniteExecution = true
+PlaygroundPage.current.liveView = containerView
+
+let view4 = UIView(frame: CGRect(x: 10, y: 10, width: 130, height: 400))
+view4.backgroundColor = .green
+let view5 = UIView(frame: CGRect(x: 150, y: 10, width: 130, height: 400))
+view5.backgroundColor = .purple
+let view6 = UIView(frame: CGRect(x: 10, y: 10, width: 100, height: 300))
+view6.backgroundColor = .blue
+let view7 = UIView(frame: CGRect(x: 9, y: 300, width: 25, height: 200))
+view7.backgroundColor = .white
+let view8 = UIView(frame: CGRect(x: 250, y: 150, width: 100, height: 400))
+view8.backgroundColor = .cyan
+
+containerView.addSubview(view4)
+containerView.addSubview(view5)
+containerView.addSubview(view6)
+containerView.addSubview(view7)
+containerView.addSubview(view8)
+
+let all = [view4, view5, view6, view7, view8]
+
+func bounding(ofBoxes boxes: [UIView]) -&gt; UIView {
+    
+    
+    
+    return UIView(frame: CGRect(origin: CGPoint(x: 0, y:0), size: CGSize(width: 100, height: 100)))
+}
+
+func draw(inContainer: UIView, boxBounding: [UIView]) {
+    let boundingBox = bounding(ofBoxes: boxBounding)
+    boundingBox.layer.borderColor = UIColor.gray.cgColor
+    boundingBox.layer.borderWidth = 5
+    boundingBox.backgroundColor = .clear
+    
+    inContainer.addSubview(boundingBox)
+}
+
+draw(inContainer: containerView, boxBounding: all)
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1773}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
